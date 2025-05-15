@@ -4,3 +4,15 @@
 
 ## Running RabbitMQ as message broker.
 ![Running RabbitMQ](./images/running-rabbitmq.jpg)
+
+## Sending and Processing Event
+
+![/run-publisher](./images/run-publisher-console.jpg)
+
+![/run-subscriber](./images/run-subscriber-console.jpg)
+
+Ketika dijalankan `cargo run` pada project `publisher`, program ini mengirimkan 5 event bertipe `UserCreatedEventMessage` ke RabbitMQ melalui koneksi `amqp://guest:guest@localhost:5672`. 
+
+Kemudian, `subscriber` yang sudah berjalan sebelumnya akan menerima semua event tersebut dan langsung memprosesnya menggunakan handler `UserCreatedHandler`. Setiap pesan dicetak ke terminal sebagai bukti bahwa proses komunikasi melalui message broker berhasil.
+
+Kedua aplikasi publisher dan subscriber menggunakan koneksi AMQP yang sama untuk berkomunikasi dengan RabbitMQ.
