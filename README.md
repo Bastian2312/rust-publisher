@@ -16,3 +16,8 @@ Ketika dijalankan `cargo run` pada project `publisher`, program ini mengirimkan 
 Kemudian, `subscriber` yang sudah berjalan sebelumnya akan menerima semua event tersebut dan langsung memprosesnya menggunakan handler `UserCreatedHandler`. Setiap pesan dicetak ke terminal sebagai bukti bahwa proses komunikasi melalui message broker berhasil.
 
 Kedua aplikasi publisher dan subscriber menggunakan koneksi AMQP yang sama untuk berkomunikasi dengan RabbitMQ.
+
+## Monitoring chart based on publisher
+![RabbitMQ Message Rate Spike](./images/monitoring.png)
+
+Gambar berikut menunjukkan adanya lonjakan `spike` pada `message rates` di RabbitMQ yang merepresentasikan aktivitas pengiriman dan penerimaan pesan dalam kurun waktu tertentu. Lonjakan ini muncul setiap kali aplikasi publisher dijalankan, yang mengirim beberapa pesan sekaligus ke `message broker`. Grafik ini menjadi indikator penting dalam memantau beban kerja dan lalu lintas pesan yang terjadi dalam sistem `message queue` secara real-time.
