@@ -3,13 +3,13 @@
 **b.** URL `amqp://guest:guest@localhost:5672` pada publisher dan subscriber menunjukkan bahwa keduanya terhubung ke *message broker* (RabbitMQ) yang sama, yaitu yang berjalan secara lokal di komputer (`localhost`) melalui *port* 5672, menggunakan kredensial default (`guest:guest`). Ini berarti publisher mengirim pesan ke broker yang sama dengan yang digunakan subscriber untuk menerima pesan tersebut.
 
 ## Running RabbitMQ as message broker.
-![Running RabbitMQ](./images/running-rabbitmq.jpg)
+![Running RabbitMQ](./images/running-rabbitmq.png)
 
 ## Sending and Processing Event
 
-![/run-publisher](./images/run-publisher-console.jpg)
+![/run-publisher](./images/publisher-console.png)
 
-![/run-subscriber](./images/run-subscriber-console.jpg)
+![/run-subscriber](./images/subscriber-console.png)
 
 Ketika dijalankan `cargo run` pada project `publisher`, program ini mengirimkan 5 event bertipe `UserCreatedEventMessage` ke RabbitMQ melalui koneksi `amqp://guest:guest@localhost:5672`. 
 
